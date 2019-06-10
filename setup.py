@@ -11,7 +11,7 @@ setuptools.setup(
     description="Python package for interacting with HR iMC restful services",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/dgray4656-org/pyimcrs",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
