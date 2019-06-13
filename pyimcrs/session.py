@@ -1,7 +1,6 @@
 import requests
 from requests.auth import HTTPDigestAuth
-#from getpass import getuser, getpass
-#import getpass
+
 import json
 import time
 from pprint import pprint
