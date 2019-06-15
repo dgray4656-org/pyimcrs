@@ -15,6 +15,7 @@ class ImcSession():
 	"""Class to Manage the Session with IMC and execute API calls"""
 
 	def __init__(self, URL, u, p):
+		self.target = URL
 		self.s = requests.Session()
 		self.s.headers.update({'Content-type':'application/json','Accept':'application/json'})
 		self.s.verify=False
@@ -64,7 +65,7 @@ class ImcSession():
 		myparams.update({'total':True})
 
 		try:
-			response=self.s.get(BASE_URL + DEVICE_PATH,params=myparams)
+			response=self.s.get(self.target + DEVICE_PATH,params=myparams)
 			count = response.headers['Total']
 		except Exception as e:
 			print(e)
@@ -76,7 +77,7 @@ class ImcSession():
 			myparams.update({'total':False})
 			myparams.update({'size':count})
 			try:
-				response = self.s.get(BASE_URL + DEVICE_PATH,params=myparams)
+				response = self.s.get(self.target + DEVICE_PATH,params=myparams)
 				jres = response.json()
 				jres2 = jres.get('device')
 			except Exception as e:
@@ -100,7 +101,7 @@ class ImcSession():
 
 		output_list=[]
 
-		target=BASE_URL + DEVICE_PATH + "/" + myparams['id'] + "/interface"
+		target=self.target + DEVICE_PATH + "/" + myparams['id'] + "/interface"
 
 		myparams.update({'total':True})
 
