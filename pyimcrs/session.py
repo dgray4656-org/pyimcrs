@@ -65,7 +65,7 @@ class ImcSession():
 		myparams.update({'total':True})
 
 		try:
-			response=self.s.get(self.target + DEVICE_PATH,params=myparams)
+			response=self.s.get(self.target + util.DEVICE_PATH,params=myparams)
 			count = response.headers['Total']
 		except Exception as e:
 			print(e)
@@ -77,7 +77,7 @@ class ImcSession():
 			myparams.update({'total':False})
 			myparams.update({'size':count})
 			try:
-				response = self.s.get(self.target + DEVICE_PATH,params=myparams)
+				response = self.s.get(self.target + util.DEVICE_PATH,params=myparams)
 				jres = response.json()
 				jres2 = jres.get('device')
 			except Exception as e:
@@ -101,7 +101,7 @@ class ImcSession():
 
 		output_list=[]
 
-		target=self.target + DEVICE_PATH + "/" + myparams['id'] + "/interface"
+		target=self.target + util.DEVICE_PATH + "/" + myparams['id'] + "/interface"
 
 		myparams.update({'total':True})
 
