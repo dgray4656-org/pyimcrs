@@ -6,21 +6,10 @@ import time
 from pprint import pprint
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
+from pyimcrs import util
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-#HEADERS={'Content-type':'application/json', 'Accept':'application/json'}
-
-#VARIABLES FOR INTERFACE 'filterTrapStatus' SETTINGS
-SYS_SETTINGS='0'
-NO_FILTER='1'
-FILTER='2'
-
-#VARIABLES FOR URI CREATION
-BASE_URL="https://hohpimcmaster01:8443/imcrs"
-DEVICE_PATH="/plat/res/device"
-MONITOR_PATH="/perf/monitor/device"
-THRESHOLD_PATH="/perf/monitor/threshold"
-ALARM_PATH="/fault/alarm"
 
 class ImcSession():
 	"""Class to Manage the Session with IMC and execute API calls"""
