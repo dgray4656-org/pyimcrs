@@ -19,7 +19,7 @@ class ImcSession():
 		self.s.headers.update({'Content-type':'application/json','Accept':'application/json'})
 		self.s.verify=False
 		try:
-			x = self.s.get(BASE_URL,auth=HTTPDigestAuth(u,p))
+			x = self.s.get(URL,auth=HTTPDigestAuth(u,p))
 			x.raise_for_status()
 		except Exception as e:
 			print(e)
