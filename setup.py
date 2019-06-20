@@ -7,7 +7,7 @@ requires=['requests>=2.22.0']
 
 setuptools.setup(
     name="pyimcrs",
-    version="0.0.2",
+    version="0.0.3",
     author="David E. Gray",
     author_email="dgray4656@yahoo.com",
     description="Python package for interacting with HP iMC restful services",
