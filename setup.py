@@ -3,6 +3,8 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+requires=['requests>=2.22.0']
+
 setuptools.setup(
     name="pyimcrs",
     version="0.0.2",
@@ -13,9 +15,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/dgray4656-org/pyimcrs",
     packages=setuptools.find_packages(),
-    install_requires=[
-          'requests >= 2.22.0',
-      ],
+    install_requires=requires,
 	classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
