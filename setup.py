@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyimcrs",
-    version="0.0.1a",
+    version="0.0.2",
     author="David E. Gray",
     author_email="dgray4656@yahoo.com",
     description="Python package for interacting with HP iMC restful services",
@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/dgray4656-org/pyimcrs",
     packages=setuptools.find_packages(),
     install_requires=[
-          'requests>=2.22.0',
+          'requests >= 2.22.0',
       ],
 	classifiers=[
         "Programming Language :: Python :: 3",
