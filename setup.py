@@ -3,11 +3,11 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-requires=['requests>=2.22.0']
+requires=['requests']
 
 setuptools.setup(
     name="pyimcrs",
-    version="0.0.3",
+    version="0.0.4",
     author="David E. Gray",
     author_email="dgray4656@yahoo.com",
     description="Python package for interacting with HP iMC restful services",
