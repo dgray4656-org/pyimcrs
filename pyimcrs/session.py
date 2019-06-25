@@ -134,3 +134,16 @@ class ImcSession():
 
 			return output_list
 
+	def get_device_allmsg(self, ipaddress):
+		myparams={'ip': ipaddress}
+		
+		desturi=self.target + util.DEVICE_ALLMSG_PATH + "/" + ipaddress
+		
+		try:
+			response=self.s.get(desturi,params=myparams)
+			jres=response.json()
+			return jres
+		except Exception as e:
+			print("Error getting all messages for device with IP: ", ipaddress)
+			print(e)
+			return None
