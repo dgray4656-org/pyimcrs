@@ -4,3 +4,4 @@ dist/
 build/
 pyimcrs.egg-info/
 tests/
+test*
