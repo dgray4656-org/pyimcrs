@@ -79,7 +79,7 @@ class ImcSession():
 			try:
 				response = self.s.get(self.target + util.DEVICE_PATH,params=myparams)
 				jres = response.json()
-				jres2 = jres.get('device')
+				jres2 = jres.get('data')
 			except Exception as e:
 				print(e)
 				return output_list
@@ -101,7 +101,7 @@ class ImcSession():
 
 		output_list=[]
 
-		target=self.target + util.DEVICE_PATH + "/" + myparams['id'] + "/interface"
+		target=self.target + util.DEVICE_PATH + "/" + str(myparams['id']) + "/interface"
 
 		myparams.update({'total':True})
 
@@ -120,7 +120,7 @@ class ImcSession():
 			try:
 				response = self.s.get(target, params=myparams)
 				jres = response.json()
-				jres2 = jres.get('interface')
+				jres2 = jres.get('data')
 			except Exception as e:
 				print("Error getting interfaces for device", myparams['id'])
 				print(e)
