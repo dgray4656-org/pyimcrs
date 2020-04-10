@@ -212,7 +212,7 @@ class ImcSession():
 			count = 0
 
 		if count==0:	
-			return outputlist
+			return output_list
 		else:
 			myparams.update({'total':False})
 			myparams.update({'size':count})
